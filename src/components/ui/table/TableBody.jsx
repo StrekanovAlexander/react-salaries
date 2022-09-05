@@ -1,6 +1,6 @@
 import React from 'react'
 
-function TableBody({ data }) {
+function TableBody({ data, handleInputField }) {
     return (
         <tbody>
             {data.map((el, index) => 
@@ -10,16 +10,18 @@ function TableBody({ data }) {
                     <td>{el.lastName}</td>
                     <td className="number">
                         <input 
-                            type="number" 
+                            type="number"
+                            name="daysWorked" 
                             value={el.daysWorked}
-                            onChange={() => console.log(el.id)}
+                            onChange={(ev) => handleInputField(ev, el.id)}
                         />
                     </td>
                     <td className="number"> 
                         <input 
                             type="number" 
+                            name="salaryRate"
                             value={el.salaryRate}
-                            onChange={() => console.log(el.id)}
+                            onChange={(ev) => handleInputField(ev, el.id)}
                         />
                     </td>
                     <td className="number">{el.totalSalary}</td>

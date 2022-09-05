@@ -3,11 +3,14 @@ import TableHead from './TableHead'
 import TableBody from './TableBody'
 import './Table.css'
 
-function Table({ data, heading }) {
+function Table(props) {
     return (
         <table>
-            <TableHead heading={heading} />
-            <TableBody data={data} />
+            <TableHead heading={props.heading} />
+            <TableBody 
+                data={props.data} 
+                handleInputField={props.handleInputField} 
+            />
         </table>
     )
 }
